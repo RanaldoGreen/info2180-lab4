@@ -1,0 +1,63 @@
+header{
+    background-color:#033e67;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "NotoSans", sans-serif ;
+    color: white;
+    font-size: 18px;
+    margin: 0px;
+}
+
+.background{
+    background-image: url(Avengers.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    
+}
+
+.btn{
+    background-color: #DC1C13;
+    border:none;
+    color: white;
+    width: 8%;
+    border-radius: 2px;
+    padding: 7px;
+}
+
+.btn:hover{
+    box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0,0,0,0.2);
+    transition: .3s;
+}
+
+.container{
+    padding-left: 17.4%;
+}
+
+hr{
+   width: 65%;
+}
+
+.search{
+    display: flex;
+    border-radius: 100%;
+}
+
+input{
+    width: 71%;
+    border-radius: 2px;
+    border: none;
+    padding: 7px;
+    box-shadow: 0 2px 1px 0 rgba(0,0,0,0.2);
+}
+
+#result{
+    padding-left: 17%;
+}

@@ -65,8 +65,36 @@ $superheroes = [
 
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+<?php        
+    function search($name){
+    global $superheroes;    
+        if(array_search($name, array_column($superheroes, 'name'))!==false){
+            $index = array_search($name, array_column($superheroes, 'name'));
+            echo '<h3>' .$superheroes[$index]["alias"] .'</h3>';
+            echo '<h4>A.K.A '. $superheroes[$index]["name"] .'</h4>';
+            echo '<p>'. $superheroes[$index]["biography"] .'</p>';
+        } 
+        else if (array_search($name, array_column($superheroes, 'alias'))!==false){
+            $index = array_search($name, array_column($superheroes, 'alias'));
+            echo '<h3>' .$superheroes[$index]["alias"] .'</h3>';
+            echo '<h4>A.K.A '. $superheroes[$index]["name"] .'</h4>';
+            echo '<p>'. $superheroes[$index]["biography"] .'</p>';
+        }
+        else{
+            echo '<h3>Superhero not found</h3>';
+        }
+    }
+
+    if(isset($_GET['name'])){
+        $hero = filter_var($_GET['name']);
+    }
+    if(empty($hero)){
+        foreach ($superheroes as $superhero){
+            echo '<li>'.$superhero['alias'];
+        }
+    }
+    else{
+        search($hero);
+    }
+?>
+
